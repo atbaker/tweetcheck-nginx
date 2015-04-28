@@ -16,7 +16,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Copy in latest source code
 COPY html /usr/share/nginx/html
 
-# Add a symlink for when we mount the Angular container's /dist directory
-RUN ln -s /usr/src/app/dist /usr/share/nginx/html/dashboard
+CMD ["bash", "-c", "'ln -sf /usr/src/app/dist /usr/share/nginx/html/dashboard && nginx -g \"daemon off;\"'"]
 
 EXPOSE 80 443
