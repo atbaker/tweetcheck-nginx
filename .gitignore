@@ -1,0 +1,4 @@
+# .gitignore for tweetcheck-nginx
+
+# Ignore our symlink for the Angular code
+html/dashboard
