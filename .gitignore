@@ -2,3 +2,6 @@
 
 # Ignore our symlink for the Angular code
 html/dashboard
+
+# Ignore our certificates
+certs/
