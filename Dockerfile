@@ -16,6 +16,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Copy in latest source code
 COPY html /usr/share/nginx/html
 
-CMD ["bash", "-c", "'ln -sf /usr/src/app/dist /usr/share/nginx/html/dashboard && nginx -g \"daemon off;\"'"]
+CMD ["bash", "-c", "ln -sf /usr/src/app/dist /usr/share/nginx/html/dashboard && nginx -g \"daemon off;\""]
 
 EXPOSE 80 443
