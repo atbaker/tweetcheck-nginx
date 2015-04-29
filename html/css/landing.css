@@ -593,6 +593,9 @@ strong { font-weight: 700; }
     height: 40px;
     display: block;
 }
+.navbar-brand h1 {
+    color: #FFF;
+}
 
 .navbar-nav > li {
     margin-left: 10px;
