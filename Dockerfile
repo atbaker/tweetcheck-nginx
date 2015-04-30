@@ -6,6 +6,9 @@ FROM nginx:1.7
 RUN rm /etc/nginx/conf.d/default.conf
 RUN rm /etc/nginx/conf.d/example_ssl.conf
 
+# Set up a symlink for the Angular code
+RUN ln -s /usr/src/app/dist /usr/share/nginx/html/dashboard
+
 # Add TweetCheck certificates
 COPY certs/ssl-bundle.crt /etc/ssl/ssl-bundle.crt
 COPY certs/tweetcheck.key /etc/ssl/tweetcheck.key
@@ -16,6 +19,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Copy in latest source code
 COPY html /usr/share/nginx/html
 
-CMD ["bash", "-c", "ln -sf /usr/src/app/dist /usr/share/nginx/html/dashboard && nginx -g \"daemon off;\""]
+# CMD ["bash", "-c", "ln -sf /usr/share/nginx/html/dashboard /usr/src/app/dist && nginx -g \"daemon off;\""]
 
 EXPOSE 80 443
